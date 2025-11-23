@@ -116,19 +116,3 @@ ax.set_xlabel("Sepal Length")
 ax.set_ylabel("Sepal Width")
 ax.set_zlabel("Petal Length")
 st.pyplot(fig)
-
-# CONCLUSIÓN
-st.divider()
-st.write("""
-### Conclusión del Proyecto
-
-Este dashboard implementa un flujo completo de minería de datos:
-
-- Exploración y limpieza del Iris dataset  
-- Preprocesamiento con escalamiento  
-- Entrenamiento del modelo Random Forest  
-- Métricas de evaluación (Accuracy, Precision, Recall, F1)  
-- Interfaz interactiva para predicción  
-- Gráfico 3D comparando un nuevo punto con el dataset  
-
-""")
