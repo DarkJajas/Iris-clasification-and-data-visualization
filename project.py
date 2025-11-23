@@ -1,10 +1,9 @@
-# ===============================================
-# 🌸 IRIS SPECIES CLASSIFICATION DASHBOARD
-# ===============================================
+
+# IRIS SPECIES CLASSIFICATION DASHBOARD
+
 # Students: Juan Sebastian Caro Molina, Edy Alberto Corro Noguera, Juan Bautista Perez Fragoso y Jhoss
 # Course: Data Mining - Universidad de la Costa
 # Professor: José Escorcia-Gutiérrez, Ph.D.
-# ===============================================
 
 import streamlit as st
 import pandas as pd
@@ -16,9 +15,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-# ------------------------------------------------
+
 # CONFIGURACIÓN STREAMLIT
-# ------------------------------------------------
 st.set_page_config(
     page_title="Iris Classifier",
     page_icon="🌸",
@@ -28,9 +26,7 @@ st.set_page_config(
 st.title("IRIS SPECIES CLASSIFICATION")
 st.write("Dashboard interactivo para clasificar especies de flores Iris usando Machine Learning.")
 
-# ------------------------------------------------
 # CARGA DEL DATASET (TU CSV)
-# ------------------------------------------------
 df = pd.read_csv("Iris.csv")
 
 # Renombrar columnas para que coincidan con formatos estándar
@@ -48,9 +44,7 @@ df = df.drop(columns=["Id"], errors="ignore")
 st.subheader("Dataset Original")
 st.dataframe(df)
 
-# ------------------------------------------------
 # PREPROCESAMIENTO
-# ------------------------------------------------
 X = df.drop("species", axis=1)
 y = df["species"]
 
@@ -62,16 +56,12 @@ X_train, X_test, y_train, y_test = train_test_split(
     X_scaled, y, test_size=0.2, random_state=42
 )
 
-# ------------------------------------------------
 # MODELO: RANDOM FOREST
-# ------------------------------------------------
 model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
-# ------------------------------------------------
 # MÉTRICAS
-# ------------------------------------------------
 st.subheader("📊 Model Performance Metrics")
 
 c1, c2, c3, c4 = st.columns(4)
@@ -82,9 +72,7 @@ c4.metric("F1 Score", f"{f1_score(y_test, y_pred, average='macro'):.3f}")
 
 st.divider()
 
-# ------------------------------------------------
 # VISUALIZACIONES EXPLICATIVAS
-# ------------------------------------------------
 st.subheader("Histogramas de Características")
 
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))
@@ -96,9 +84,7 @@ st.pyplot(fig)
 
 st.divider()
 
-# ------------------------------------------------
 # PREDICCIÓN DE USUARIO
-# ------------------------------------------------
 st.subheader("Predicción de Nueva Flor")
 
 sl = st.slider("Sepal Length", 4.0, 8.0, 5.5)
@@ -113,9 +99,7 @@ prediction = model.predict(scaled_new)[0]
 
 st.success(f"🌸 **La especie predicha es: {prediction.upper()}**")
 
-# ------------------------------------------------
 # VISUALIZACIÓN 3D DEL NUEVO PUNTO
-# ------------------------------------------------
 st.subheader("🌐 Visualización 3D del Nuevo Ejemplo")
 
 fig = plt.figure(figsize=(8, 6))
@@ -133,9 +117,7 @@ ax.set_ylabel("Sepal Width")
 ax.set_zlabel("Petal Length")
 st.pyplot(fig)
 
-# ------------------------------------------------
 # CONCLUSIÓN
-# ------------------------------------------------
 st.divider()
 st.write("""
 ### Conclusión del Proyecto
