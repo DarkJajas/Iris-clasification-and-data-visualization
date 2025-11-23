@@ -1,1 +1,3 @@
 # Iris-clasification-and-data-visualization
+
+#Integrantes: Juan Sebastian Caro Molina, Edy Alberto Corro Noguera, Juan Bautista Perez Fragoso y ...
