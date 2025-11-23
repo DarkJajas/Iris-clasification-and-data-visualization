@@ -1,7 +1,7 @@
 # ===============================================
 # 🌸 IRIS SPECIES CLASSIFICATION DASHBOARD
 # ===============================================
-# Students: Jose Insignares & Carlos Ibarra
+# Students: Juan Sebastian Caro Molina, Edy Alberto Corro Noguera, Juan Bautista Perez Fragoso y Jhoss
 # Course: Data Mining - Universidad de la Costa
 # Professor: José Escorcia-Gutiérrez, Ph.D.
 # ===============================================
